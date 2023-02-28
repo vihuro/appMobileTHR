@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "AppThr",
+    "slug": "AppThr",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vihuro.AppThr"
+    },
+    "android": {
+      "userInterfaceStyle": "dark",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#0000ae"
+      },
+      "package": "com.vihuro.AppThr"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "92705b4b-a088-459f-b7e9-e3a61eab0421"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/92705b4b-a088-459f-b7e9-e3a61eab0421"
+    }
+  }
+}
