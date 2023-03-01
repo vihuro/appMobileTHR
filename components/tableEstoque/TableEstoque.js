@@ -21,6 +21,7 @@ import CardMovimentacoesEstoque from '../card/cardEstoque/CardMovimentacoesEstoq
 import CardInfo from "../card/cardInfo/CardInfo";
 import HeaderBar from "../header/headerTopBarSearch/HeaderBarBackAndSearch";
 
+
 const TabelaEstoque = (props) => {
 
     const [estoque, setEstoque] = useState([]);
@@ -357,7 +358,6 @@ const TabelaEstoque = (props) => {
     const scrollY = useRef(new Animated.Value(0)).current;
     const offsetAnim = useRef(new Animated.Value(0)).current;
 
-
     const clampedScroll = Animated.diffClamp(
         Animated.add(
             scrollY.interpolate({
@@ -370,36 +370,6 @@ const TabelaEstoque = (props) => {
         0,
         CONTAINER_HEIGHT
     )
-
-    var _clapedSrollValue = 0;
-    var _offSetValue = 0;
-    var _scrollValue = 0;
-    useEffect(() => {
-        scrollY.addListener(({ value }) => {
-            const diff = value - _scrollValue;
-            _scrollValue = value;
-            _clapedSrollValue = Math.min(
-                Math.max(_clapedSrollValue * diff, 0),
-                CONTAINER_HEIGHT,
-            )
-        });
-        offsetAnim.addListener(({ value }) => {
-            _offSetValue = value;
-        })
-        props.navigate.setOptions({
-            title: 'Estoque THR',
-        });
-
-        props.navigate.setOptions({ headerShown: false })
-
-    }, [])
-
-    const [search, setSearch] = useState('');
-
-    const listaFiltrada = lista.filter(
-        (descricao) => descricao.descricao.toLocaleLowerCase().includes(search.toLocaleLowerCase())
-    );
-
 
 
     const headerTranslate = clampedScroll.interpolate({
@@ -414,6 +384,40 @@ const TabelaEstoque = (props) => {
         extrapolate: 'clamp'
 
     })
+
+
+
+    var _clapedSrollValue = 0;
+    var _offSetValue = 0;
+    var _scrollValue = 0;
+    
+    useEffect(() => {
+        scrollY.addListener(({ value }) => {
+            const diff = value - _scrollValue;
+            _scrollValue = value;
+            _clapedSrollValue = Math.min(
+                Math.max(_clapedSrollValue * diff, 0),
+                CONTAINER_HEIGHT,
+            )
+        });
+        offsetAnim.addListener(({ value }) => {
+            _offSetValue = value;
+            console.log(_offSetValue)
+
+        })
+        props.navigate.setOptions({
+            title: 'Estoque THR',
+        });
+
+        props.navigate.setOptions({ headerShown: false })
+
+    }, [])
+
+    const [search, setSearch] = useState('');
+
+    const listaFiltrada = lista.filter(
+        (descricao) => descricao.descricao.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+    );
 
 
 
@@ -493,28 +497,10 @@ const TabelaEstoque = (props) => {
                                 }}
                             >
                                 <View id={index} style={[styles.card]}>
-
                                     <View style={styles.column}><Text style={styles.text}>{item.codigo}</Text></View>
                                     <View style={styles.column}><Text style={styles.text}>{item.descricao}</Text></View>
                                     <View style={[styles.column,{width:37}]}><Text style={styles.text}>{item.unidade}</Text></View>
                                     <View style={styles.column}><Text style={styles.text}>{item.quantidadeEstoque}</Text></View>
-
-                                    {/* {cardInfo && index === findIndex && (
-                                        <View
-                                            style={{
-                                                elevation: 7,
-                                                position:'absolute',
-                                                marginTop:100,
-                                                display:'flex',
-                                                left: 20,
-                                                width: 100,
-                                            }}
-                                        >
-                                            <CardInfo
-                                                info={index}
-                                            />
-                                        </View>
-                                    )} */}
                                 </View>
                             </TouchableNativeFeedback>
 
@@ -601,6 +587,16 @@ const TabelaEstoque = (props) => {
                 </View>
 
             </Animated.View>
+
+            {/* <Animated.View style={{
+                width:50,height:50,right:0,backgroundColor:'red',position:'absolute',top:CONTAINER_HEIGHT ,
+                transform:[{
+                    translateY:scrollY 
+                }]
+            }}>
+
+            </Animated.View> */}
+
         </View>
     )
 }

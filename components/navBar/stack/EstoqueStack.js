@@ -4,7 +4,7 @@ import theme from '../../../theme/light'
 
 import EstoqueMenu from '../../../pages/estoque/estoqueMenu/EstoqueMenu';
 import MovimentacoesEstoque from '../../../pages/estoque/MovimentacoesEstoque';
-import NovaMovimentacao from '../../../pages/estoque/movimentacoes/NovaMovimentacao';
+import NovaMovimentacao from '../../../pages/estoque/movimentacoes/novaMovimentacao/NovaMovimentacao';
 import Estoque from '../../../pages/estoque/Estoque';
 import Search from '../../../pages/search/PageSearch';
 
