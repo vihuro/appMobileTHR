@@ -12,14 +12,10 @@ import { useState } from 'react';
 import MovimentacoesEstoque from '../../pages/estoque/MovimentacoesEstoque';
 import Search from '../../pages/search/PageSearch';
 import NovaMovimentacao from '../../pages/estoque/movimentacoes/NovaMovimentacao';
+import style from './style';
+import theme from '../../theme/light'
 
-function Feed() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
+import icons from '../../theme/icons/expo/Icon'
 
 function Profile() {
   return (
@@ -29,26 +25,12 @@ function Profile() {
   );
 }
 
-function Notifications() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications!</Text>
-    </View>
-  );
-}
 
 const Tab = createBottomTabNavigator();
 
 const Stack = createNativeStackNavigator();
 
-const EstoqueStack = () => {
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Estoque" component={Estoque} />
-      <Stack.Screen name="Principal" component={Principal} />
-    </Stack.Navigator>
-  )
-}
+
 
 const EstoqueMenuStack = () => {
   return (
@@ -56,12 +38,12 @@ const EstoqueMenuStack = () => {
       headerShown: false,
       tabBarShowLabel: false,
       headerTransparent: false,
-      tabBarActiveTintColor: '#ffff',
-      tabBarStyle: { backgroundColor: "#0000ae" },
+      tabBarActiveTintColor: theme.COLORS.SECONDARY,
+      tabBarStyle: { backgroundColor: theme.COLORS.PRIMARY },
       headerStyle: {
-        backgroundColor: '#0000ae'
+        backgroundColor: theme.COLORS.PRIMARY
       },
-      headerTintColor: "#fff",
+      headerTintColor: theme.COLORS.SECONDARY,
       // headerSearchBarOptions:{placeholder:"Pesquisar"}
     }}>
       <Stack.Screen name="MenuEstoque" component={EstoqueMenu} />
@@ -96,12 +78,12 @@ export default function MyTabs() {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarActiveTintColor: '#ffff',
-        tabBarStyle: { backgroundColor: "#0000ae" },
+        tabBarActiveTintColor: theme.COLORS.SECONDARY,
+        tabBarStyle: { backgroundColor: theme.COLORS.PRIMARY},
         headerStyle: {
-          backgroundColor: '#0000ae',
+          backgroundColor: theme.COLORS.PRIMARY,
         },
-        headerTintColor: "#fff"
+        headerTintColor: theme.COLORS.SECONDARY
       }}>
       <Tab.Screen
         name="Menu"
@@ -112,8 +94,8 @@ export default function MyTabs() {
             <MaterialCommunityIcons color={color} size={size} name='home' />
           ),
           tabBarButton: ({ accessibilityState, children, ...props }) => (
-            <View style={{flex:1,alignItems:'center',justifyContent:'center'}} >
-              <TabBarButton  {...props} type={Icons.AntDesign} name={'home'} active={accessibilityState.selected} />
+            <View style={style.containerButton} >
+              <TabBarButton  {...props} type={icons.ICONS.AntDesign} name={'home'} active={accessibilityState.selected} />
             </View>
           )}}
       />
@@ -123,8 +105,8 @@ export default function MyTabs() {
         options={{
           tabBarLabel: 'Estoque',
           tabBarButton: ({ accessibilityState, children, ...props }) => (
-            <View style={{flex:1,alignItems:'center',justifyContent:'center'}} >
-              <TabBarButton  {...props} type={Icons.Feather} name={'box'} active={accessibilityState.selected} />
+            <View style={style.containerButton}  >
+              <TabBarButton  {...props} type={icons.ICONS.Feather} name={'box'} active={accessibilityState.selected} />
             </View>
         )}}
       />
@@ -136,8 +118,8 @@ export default function MyTabs() {
           tabBarLabel: 'Updates',
 
           tabBarButton: ({accessibilityState, children, ...props}) =>(
-            <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-              <TabBarButton {...props} type={Icons.Feather}name="truck" active={accessibilityState.selected} />
+            <View style={style.containerButton} >
+              <TabBarButton {...props} type={icons.ICONS.Feather}name="truck" active={accessibilityState.selected} />
             </View>
           )
         }}

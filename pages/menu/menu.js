@@ -11,10 +11,6 @@ const tab = createBottomTabNavigator();
 
 const Menu = ({navigation}) =>{
 
-    function navegar() {
-        console.log(navigation)
-        navigation.navigate('Estoque')
-    }
 
     return(
         <View style={styles.container}>

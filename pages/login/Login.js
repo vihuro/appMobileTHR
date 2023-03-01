@@ -16,7 +16,6 @@ const Login = ({ navigation }) => {
   const [senha, setSenha] = useState('');
 
   const logar = async () => {
-    console.warn(navigation)
     navigation.reset({
       index: 0,
       routes: [{ name: "Menu" }]
@@ -25,17 +24,17 @@ const Login = ({ navigation }) => {
       'apelido': usuario,
       'senha': senha
     };
-    await api.post('/login', login)
-      .then(response => alert(JSON.stringify(response.data)))
-      .catch(error => {
-        if (error.response.data) {
-          alert(error.response.data)
-        }
-        else {
-          console.log(error)
-        }
+    // await api.post('/login', login)
+    //   .then(response => alert(JSON.stringify(response.data)))
+    //   .catch(error => {
+    //     if (error.response.data) {
+    //       alert(error.response.data)
+    //     }
+    //     else {
+    //       console.log(error)
+    //     }
 
-      });
+    //   });
   }
 
   return (

@@ -1,11 +1,8 @@
 import React from "react";
-import { Button, Image, Text, TouchableHighlight, TouchableNativeFeedback, View } from 'react-native'
+import { Text, TouchableNativeFeedback, View } from 'react-native'
 import styles from "./styles";
-import TabelaEstoque from "../../components/tableEstoque/TableEstoque";
-import Estoque from "../estoque/Estoque";
-import UiButton from "../../components/UiButton/UiButton";
-import { StatusBar } from "expo-status-bar";
 import Header from "../../components/header/HeaderOnMenu";
+import theme from '../../theme/light'
 
 export const Principal = ({ navigation }) => {
 
@@ -34,19 +31,13 @@ export const Principal = ({ navigation }) => {
                 onPress={navegar}
                     background={TouchableNativeFeedback.Ripple(
                     'black',false)}>
-                        <View style={{width:350,height:40,alignItems:'center',justifyContent:'center',backgroundColor:'red'}}>
+                        <View style={{width:350,height:40,alignItems:'center',justifyContent:'center',backgroundColor:theme.COLORS.ALERT}}>
                         <Text style={{fontSize:14,color:'white'}}>
                             SAIR
                         </Text>
-                   
-
                         </View>
-
                 </TouchableNativeFeedback>
-
             </View>
-
-
         </View>
     )
 }

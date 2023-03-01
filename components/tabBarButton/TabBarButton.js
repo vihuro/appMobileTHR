@@ -1,32 +1,5 @@
-import react from "react";
 import {View,Text,TouchableNativeFeedback} from 'react-native'
-import { AntDesign ,
-        FontAwesome,
-        Ionicons,
-        Entypo,
-        EvilIcons,
-        MaterialIcons,
-        Octicons,
-        Fontisto,
-        Zocial,
-        SimpleLineIcons,
-        FontAwesome5,
-        MaterialCommunityIcons ,
-        Feather} from '@expo/vector-icons';
-import Icon from "@expo/vector-icons";
 
-export const Icons = {
-    MaterialCommunityIcons,
-    MaterialIcons,
-    Ionicons,
-    Feather,
-    FontAwesome,
-    AntDesign,
-    Entypo,
-    SimpleLineIcons,
-    Octicons,
-    EvilIcons,
-}
 
 
 const TabBarButton = ({active,name,type,...props}) =>{
@@ -35,6 +8,8 @@ const TabBarButton = ({active,name,type,...props}) =>{
 
     return(
         <TouchableNativeFeedback
+        style={{
+        }}
         background={TouchableNativeFeedback.Ripple(
             'black',true
         )}
