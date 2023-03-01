@@ -10,12 +10,9 @@ const tab = createBottomTabNavigator();
 
 
 const Menu = ({navigation}) =>{
-
-
     return(
         <View style={styles.container}>
-            <MyTabs/>
-            <StatusBar style="light"/>
+            <StatusBar translucent={true} style="light"/>
         </View>
     )
 

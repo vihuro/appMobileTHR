@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import THEME from '../../../theme/light'
 
 const styles = StyleSheet.create({
     container:{
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         left: 45,
     },
     wrapContainerInputSearch:{
-        backgroundColor: '#0000ae',
+        backgroundColor: THEME.COLORS.PRIMARY,
         position: 'absolute',
         height: 40,
         flexDirection: 'row',
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     input:{
-        color:'white',
+        color:THEME.COLORS.TEXT_PRIMARY,
         borderColor: 'gray',
         width: 280,
         left:10,

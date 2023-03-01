@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 
 import { Button, Text, Dimensions, TextInput, TouchableHighlight, View, Image, ImageBackground, TouchableNativeFeedback } from 'react-native';
@@ -14,6 +14,14 @@ const Login = ({ navigation }) => {
 
   const [usuario, setUsuario] = useState('');
   const [senha, setSenha] = useState('');
+
+  useEffect(() =>{
+    navigation.getParent().setOptions({
+      tabBarStyle:{
+        display:'none'
+      }
+    })
+  },[])
 
   const logar = async () => {
     navigation.reset({

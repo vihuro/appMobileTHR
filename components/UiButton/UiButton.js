@@ -1,25 +1,35 @@
 import react from "react";
 import { Text, TouchableHighlight, TouchableNativeFeedback, View } from "react-native";
 import styles from "./styles";
+import THEME from "../../theme/light"
 
 
 
-const UiButton = ( props ) => {
+const UiButton = ( {
+    text,
+    action,
+    color,
+    visible} ) => {
+
     return (
         <View style={styles.container}>
             <TouchableNativeFeedback
             background={TouchableNativeFeedback.Ripple(
                 'black'
             )}
-            onPress={props.action}>
-                <View style={{padding:20,backgroundColor:'#0000ae'}}>
-                    <Text style={{color:'white'}} >{props.text}</Text>
+            onPress={action}>
+                <View style={[styles.containetButton,{backgroundColor:color, display:visible}]}>
+                    <Text style={styles.text}>{text}</Text>
                 </View>
             </TouchableNativeFeedback>
-
-
         </View>
     )
+
+}
+
+UiButton.defaultProps ={
+    color:THEME.COLORS.PRIMARY,
+    visible:"flex"
 }
 
 

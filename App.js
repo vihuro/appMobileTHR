@@ -14,21 +14,20 @@ import EstoqueMenu from './pages/estoque/estoqueMenu/EstoqueMenu';
 import Movimentacao from './pages/estoque/movimentacoes/Movimentacao';
 import Search from './pages/search/PageSearch';
 import NovaMovimentacao from './pages/estoque/movimentacoes/NovaMovimentacao';
+import { StatusBar } from 'expo-status-bar';
 
 const Stack = createNativeStackNavigator();
 
-if(Platform.OS === 'android') { // only android needs polyfill
-  require('intl'); // import intl object
-  require('intl/locale-data/jsonp/pt-BR'); // load the required locale details
-}
 export default function App() {
 
   return (
     <NavigationContainer style={styles.container}><ImageBackground source={require('./assets/telaPadraoComIcone.png')}/>
-      <Stack.Navigator screenOptions={{headerShown:true}}>      
+    <MyTabs/>
+    <StatusBar/>
+      {/* <Stack.Navigator screenOptions={{headerShown:true}}>      
         <Stack.Screen options={{headerShown:false}} name="Login" component={Login} />
         <Stack.Screen options={{headerShown:false, headerStyle:{backgroundColor:'#3f31ea', color:'#fff'}}} name="Menu" component={Menu} />
-      </Stack.Navigator>
+      </Stack.Navigator> */}
     </NavigationContainer>
   );
 }

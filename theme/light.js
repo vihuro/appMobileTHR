@@ -7,5 +7,7 @@ export default {
 
         TEXT_PRIMARY: '#FFF',
         TEXT_SECONDARY: "#080808"
+
     }
 }
+

@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import { Text, TouchableNativeFeedback, View } from 'react-native'
 import styles from "./styles";
 import Header from "../../components/header/HeaderOnMenu";
@@ -6,6 +6,14 @@ import theme from '../../theme/light'
 
 export const Principal = ({ navigation }) => {
 
+    useEffect(() =>{
+        navigation.getParent().setOptions({
+          tabBarStyle:{
+            display:'flex',
+            backgroundColor:theme.COLORS.PRIMARY
+          }
+        })
+      },[])
 
     function navegar() {
         navigation.navigate("Login")

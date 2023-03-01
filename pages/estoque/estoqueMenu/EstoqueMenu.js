@@ -1,4 +1,3 @@
-import react from "react";
 import {View, Text} from 'react-native';
 import Header from "../../../components/header/HeaderOnMenu";
 import UiButton from "../../../components/UiButton/UiButton";
@@ -6,6 +5,7 @@ import style from "./Style";
 
 
 const EstoqueMenu = ({navigation}) =>{
+
 
     function navegar() {
         navigation.navigate('Estoque')
@@ -20,19 +20,19 @@ const EstoqueMenu = ({navigation}) =>{
     return(
         <View style={style.container}>
             <Header/>
-            <View style={{ marginTop:10, width: 350, justifyContent: 'center', alignContent: 'center' }}>
+            <View style={style.containerButton}>
                 <UiButton
                     text={'CONSULTAR ESTOQUE'}
                     action={() => { navegar()}}
                 />
             </View>
-            <View style={{ marginTop:10,width: 350, justifyContent: 'center', alignContent: 'center' }}>
+            <View style={style.containerButton}>
                 <UiButton
                     text={'CONSULTRAR MOVIMENTAÇÕES'}
                     action={() => { navegarMovimenacoes() }}
                 />
             </View>
-            <View style={{ marginTop:10,width: 350, justifyContent: 'center', alignContent: 'center' }}>
+            <View style={style.containerButton}>
                 <UiButton
                     text={'NOVA MOVIMENTAÇÂO'}
                     action={() => { navegarNovaMovimentacao() }}

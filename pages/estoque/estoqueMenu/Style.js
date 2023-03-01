@@ -6,6 +6,12 @@ const style = StyleSheet.create({
         alignItems:'center'
 
     },
+    containerButton:{
+        marginTop:10,
+        width: 350, 
+        justifyContent: 'center', 
+        alignContent: 'center'
+    }
 })
 
 export default style
