@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 
-import { Button, Text, Dimensions, TextInput, TouchableHighlight, View, Image, ImageBackground, TouchableNativeFeedback } from 'react-native';
+import { Button, Text, Dimensions, TextInput,TouchableHighlight, View, Image, ImageBackground, TouchableNativeFeedback } from 'react-native';
 import api from '../../Services/api'
 import { LinearGradient } from 'expo-linear-gradient';
 import 'localstorage-polyfill';
@@ -54,7 +54,7 @@ const Login = ({ navigation }) => {
         <View style={styles.wrapLogin}>
           <Text style={styles.infoUser}>Usuário:</Text>
           <View style={styles.containerInput}>
-            <TextInput value={usuario} onChangeText={e => setUsuario(e)} style={styles.input} />
+            <TextInput selectionColor={'black'}  tintc value={usuario} onChangeText={e => setUsuario(e)} style={styles.input} />
           </View>
           <Text style={styles.infoUser}>Senha:</Text>
           <View style={styles.containerInput}>

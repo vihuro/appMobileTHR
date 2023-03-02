@@ -10,7 +10,8 @@ import Search from '../../../pages/search/PageSearch';
 
 const Stack = createNativeStackNavigator();
 
-export default EstoqueStack = () => {
+export default EstoqueStack = ({navigate,navigation}) => {
+
     return (
       <Stack.Navigator screenOptions={{
         headerShown: false,
@@ -43,7 +44,7 @@ export default EstoqueStack = () => {
           }
         }} />
         <Stack.Screen options={{headerShown:true}} name={"Search"} component={Search} /> 
-        <Stack.Screen options={{headerShown:true}} name={"NovaMovimentacao"} component={NovaMovimentacao} />
+        <Stack.Screen options={{headerShown:true,title:'Nova Movimentação'}} name={"NovaMovimentacao"} component={NovaMovimentacao}  />
       </Stack.Navigator>
     )
   }
